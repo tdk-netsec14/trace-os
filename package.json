@@ -1,0 +1,17 @@
+{
+  "name": "trace-os",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "server": "cd server && node index.js",
+    "web": "cd web-dashboard && npm start",
+    "desktop": "cd desktop-app && npm run electron-dev",
+    "extension:build": "cd vscode-extension && npm run build",
+    "extension:watch": "cd vscode-extension && npm run watch",
+    "dev": "concurrently \"npm run server\" \"npm run web\"",
+    "dev:all": "concurrently \"npm run server\" \"npm run web\" \"npm run extension:watch\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
