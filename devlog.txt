@@ -1,3 +1,4 @@
 [2026-03-30T10:15:00] init: basic project scaffolding and server package
 [2026-04-01T14:22:00] feat(db): initialize SQLite database schema and connection
 [2026-04-03T11:05:00] feat(server): setup basic express server and health endpoint
+[2026-04-05T16:45:00] feat(api): implement activity ingestion endpoint
