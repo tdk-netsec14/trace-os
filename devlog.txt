@@ -4,3 +4,4 @@
 [2026-04-05T16:45:00] feat(api): implement activity ingestion endpoint
 [2026-04-08T09:30:00] feat(ai): integrate embedding service via Ollama
 [2026-04-10T13:20:00] feat(ai): dual AI pipeline with Ollama and Gemini fallback
+[2026-04-12T15:10:00] feat(api): add search and standup endpoints
