@@ -8,3 +8,4 @@
 [2026-04-13T10:05:00] feat(api): complete core endpoints for focus and decisions
 [2026-05-02T11:45:00] docs: draft architecture and project brief
 [2026-05-05T14:30:00] feat(web): initialize react web dashboard scaffolding
+[2026-05-07T16:15:00] feat(web): base react router and index styling
