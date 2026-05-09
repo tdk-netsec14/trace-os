@@ -1,0 +1,109 @@
+{
+  "name": "trace-os-extension",
+  "displayName": "Trace OS",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "devproductivity",
+          "title": "Trace OS",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "devproductivity": [
+        {
+          "type": "webview",
+          "id": "devproductivity.context",
+          "name": "Context"
+        },
+        {
+          "type": "webview",
+          "id": "devproductivity.standup",
+          "name": "Standup"
+        },
+        {
+          "type": "webview",
+          "id": "devproductivity.search",
+          "name": "Search"
+        },
+        {
+          "type": "webview",
+          "id": "devproductivity.focus",
+          "name": "Focus"
+        },
+        {
+          "type": "webview",
+          "id": "devproductivity.decisions",
+          "name": "Decisions"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "devproductivity.resumeContext",
+        "title": "Trace OS: Resume Context"
+      },
+      {
+        "command": "devproductivity.generateStandup",
+        "title": "Trace OS: Generate Standup"
+      },
+      {
+        "command": "devproductivity.startFocus",
+        "title": "Trace OS: Start Focus Session"
+      },
+      {
+        "command": "devproductivity.endFocus",
+        "title": "Trace OS: End Focus Session"
+      },
+      {
+        "command": "devproductivity.logDecision",
+        "title": "Trace OS: Log Architectural Decision"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "devproductivity.resumeContext",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r"
+      },
+      {
+        "command": "devproductivity.generateStandup",
+        "key": "ctrl+shift+s",
+        "mac": "cmd+shift+s"
+      },
+      {
+        "command": "devproductivity.startFocus",
+        "key": "ctrl+shift+f",
+        "mac": "cmd+shift+f"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "vscode:prepublish": "npm run build"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "@types/react": "^18.3.22",
+    "@types/react-dom": "^18.3.7",
+    "@types/vscode": "^1.94.0",
+    "esbuild": "^0.25.5",
+    "typescript": "^5.8.3"
+  }
+}
