@@ -10,3 +10,4 @@
 [2026-05-05T14:30:00] feat(web): initialize react web dashboard scaffolding
 [2026-05-07T16:15:00] feat(web): base react router and index styling
 [2026-05-09T09:50:00] feat(ext): vscode extension scaffolding and build config
+[2026-05-10T11:00:00] feat(ext): core extension activation and command registration
