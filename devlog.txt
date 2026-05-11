@@ -12,3 +12,4 @@
 [2026-05-09T09:50:00] feat(ext): vscode extension scaffolding and build config
 [2026-05-10T11:00:00] feat(ext): core extension activation and command registration
 [2026-05-11T14:10:00] feat(desktop): initial electron desktop app wrapper
+[2026-05-11T23:45:00] feat(web): implement core dashboard components
