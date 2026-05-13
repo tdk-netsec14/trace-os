@@ -14,3 +14,4 @@
 [2026-05-11T14:10:00] feat(desktop): initial electron desktop app wrapper
 [2026-05-11T23:45:00] feat(web): implement core dashboard components
 [2026-05-12T10:20:00] feat(web): add activity feed and standup modal UI
+[2026-05-13T13:40:00] feat(web): knowledge graph and insights integration
