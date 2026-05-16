@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Google Fonts (loaded via index.html preconnect) ── */
+
+/* ── Global Reset & Base ── */
+:root {
+  color-scheme: dark;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-base: #0B1020;
+  --color-surface-1: #121826;
+  --color-surface-2: #1B2336;
+  --color-surface-3: #212A3D;
+  --color-primary: #7C3AED;
+  --color-accent: #06B6D4;
+  --color-border: #1F2937;
+  --color-border-active: #2D3748;
+  --transition-fast: 100ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--color-base);
+  color: #E8DFEE;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2D3748;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4A4455;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(124, 58, 237, 0.3);
+  color: #E8DFEE;
+}
+
+/* ── Focus Ring ── */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ── Typography Utilities ── */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ── Stitch Component: Button Primary ── */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded bg-primary px-4 py-2
+           text-body-md font-medium text-white
+           transition-all duration-normal;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .btn-primary:hover {
+    filter: brightness(1.05);
+  }
+  .btn-primary:active {
+    filter: brightness(0.95);
+    transform: scale(0.98);
+  }
+
+  /* ── Stitch Component: Button Secondary ── */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded bg-surface-high px-4 py-2
+           text-body-md font-medium text-on-surface
+           border border-border transition-all duration-normal;
+  }
+  .btn-secondary:hover {
+    filter: brightness(1.05);
+    @apply border-border-active;
+  }
+  .btn-secondary:active {
+    filter: brightness(0.95);
+    transform: scale(0.98);
+  }
+
+  /* ── Stitch Component: Button Ghost ── */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded px-3 py-1.5
+           text-body-md text-text-secondary
+           transition-all duration-normal;
+    background: transparent;
+    border: 1px solid transparent;
+  }
+  .btn-ghost:hover {
+    @apply bg-surface-mid text-on-surface border-border;
+  }
+
+  /* ── Stitch Component: Card ── */
+  .card {
+    @apply rounded-lg bg-surface border border-border;
+  }
+  .card-header {
+    @apply bg-surface-mid px-4 py-3 border-b border-border;
+  }
+  .card-body {
+    @apply px-4 py-4;
+  }
+
+  /* ── Stitch Component: Input ── */
+  .input {
+    @apply w-full rounded bg-surface border border-border px-3 py-2
+           text-code-md font-mono text-on-surface
+           placeholder:text-text-muted
+           transition-all duration-normal;
+  }
+  .input:focus {
+    @apply border-primary shadow-glow-primary outline-none;
+  }
+
+  /* ── Stitch Component: Chip / Tag ── */
+  .chip {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5
+           text-code-sm font-mono border border-border bg-surface-mid
+           text-text-secondary;
+  }
+
+  /* ── Sidebar Active Pill ── */
+  .nav-pill {
+    @apply relative flex items-center gap-3 px-4 py-2 rounded text-body-md
+           text-text-secondary transition-all duration-normal cursor-pointer;
+  }
+  .nav-pill:hover {
+    @apply bg-surface-mid text-on-surface;
+  }
+  .nav-pill.active {
+    @apply text-on-surface bg-surface-mid;
+  }
+  .nav-pill.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--color-primary);
+    border-radius: 0 2px 2px 0;
+  }
+
+  /* ── Skeleton Loader ── */
+  .skeleton {
+    @apply rounded bg-surface-mid animate-skeleton;
+  }
+
+  /* ── Status Indicators ── */
+  .status-dot {
+    @apply inline-block w-2 h-2 rounded-full;
+  }
+  .status-dot.online {
+    @apply bg-success;
+    box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+  }
+  .status-dot.offline {
+    @apply bg-error;
+  }
+
+  /* ── Backdrop Overlay ── */
+  .backdrop {
+    @apply fixed inset-0 bg-black/60 backdrop-blur-sm z-50
+           animate-fade-in;
+  }
+
+  /* ── Modal / Command Palette ── */
+  .modal-surface {
+    @apply bg-surface-high border border-border rounded-xl shadow-float
+           animate-slide-in;
+    backdrop-filter: blur(12px);
+  }
+
+  /* ── Inner glow for premium cards ── */
+  .inner-glow {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* ── Stitch: label-caps text transform ── */
+.text-label-caps {
+  text-transform: uppercase;
+}
+
+/* ── Smooth page transitions ── */
+.page-enter {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* ── Timer animation ── */
+@keyframes timerPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.timer-pulse {
+  animation: timerPulse 2s ease-in-out infinite;
+}
