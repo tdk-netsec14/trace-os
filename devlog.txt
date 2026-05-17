@@ -20,3 +20,4 @@
 [2026-05-15T11:05:00] feat(web): assemble auxiliary views (search, graph, decisions)
 [2026-05-16T14:25:00] feat(desktop): sync desktop app react views with dashboard
 [2026-05-17T02:15:00] feat(ext): build out extension webview UI components
+[2026-05-17T16:40:00] feat(ext): wire up extension webview screens
