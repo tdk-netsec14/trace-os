@@ -25,3 +25,4 @@
 [2026-05-19T13:55:00] feat(ext): register vs code commands
 [2026-05-20T09:30:00] docs: final API reference and setup guides
 [2026-05-20T16:05:00] chore: add extension icons and resources
+[2026-05-21T11:20:00] feat(landing): build marketing and landing page

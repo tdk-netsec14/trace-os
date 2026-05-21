@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Design System Variables */
+:root {
+  --color-base: #000000;
+  --color-surface: #3D423E;
+  --color-primary: #FF6647;
+  --color-secondary: #9E9E9E;
+  --color-accent: #9E9E9E;
+  --color-text-primary: #F3FFF7;
+  --color-border: #1F2937;
+  --accent: #FF6647;
+  --accent-bg: #3D423E;
+  --accent-border: #FF6647;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-textPrimary font-sans antialiased selection:bg-accent/30;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-surface/80 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60;
+  }
+}
